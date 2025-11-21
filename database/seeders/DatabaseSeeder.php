@@ -3,52 +3,60 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Role;
-use App\Models\User;
-use App\Models\Unit;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use App\Models\Role;
+use App\Models\Unit;
+use App\Models\Resident;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. BUAT ROLES (Penting untuk hak akses)
-        $roleAdmin = Role::create(['role_name' => 'Admin']);
-        $roleResident = Role::create(['role_name' => 'Resident']); // Penghuni
-        $roleStaff = Role::create(['role_name' => 'Staff']);
+        // 1. BUAT ROLES (Penting!)
+        $adminRole = Role::create(['role_name' => 'Admin']);
+        $residentRole = Role::create(['role_name' => 'Resident']);
 
-        // 2. BUAT USER ADMIN (Agar kamu bisa login nanti)
+        // 2. BUAT AKUN ADMIN (Ini akun login kamu nanti)
         User::create([
-            'role_id' => $roleAdmin->id, // Link ke Role Admin di atas
+            'role_id' => $adminRole->id,
             'name' => 'Super Admin',
-            'email' => 'admin@gmail.com', // Email untuk login
-            'password' => Hash::make('password'), // Passwordnya: password
+            'email' => 'admin@gmail.com', // Email login admin
+            'password' => Hash::make('password'), // Password: password
             'phone' => '081234567890',
         ]);
 
-        // 3. BUAT BEBERAPA UNIT APARTEMEN (Contoh Data)
-        Unit::create([
-            'unit_number' => 'A-101',
-            'tower' => 'Tower A',
-            'floor' => 1,
-            'type' => 'Studio',
-            'status' => 'Kosong',
+        // 3. BUAT AKUN PENGHUNI (User biasa)
+        $warga = User::create([
+            'role_id' => $residentRole->id,
+            'name' => 'Budi Santoso',
+            'email' => 'warga@gmail.com', // Email login warga
+            'password' => Hash::make('password'),
+            'phone' => '089876543210',
         ]);
 
-        Unit::create([
-            'unit_number' => 'B-205',
-            'tower' => 'Tower B',
-            'floor' => 2,
-            'type' => '2BR', // 2 Kamar
-            'status' => 'Terisi',
-        ]);
-        
-        Unit::create([
-            'unit_number' => 'C-512',
-            'tower' => 'Tower C',
-            'floor' => 5,
-            'type' => '1BR', 
-            'status' => 'Maintenance',
+        // 4. BUAT DATA UNIT APARTEMEN (Dummy Data)
+        $units = [
+            ['unit_number' => '101', 'tower' => 'A', 'floor' => 1, 'type' => 'Studio', 'status' => 'Terisi'],
+            ['unit_number' => '102', 'tower' => 'A', 'floor' => 1, 'type' => 'Studio', 'status' => 'Kosong'],
+            ['unit_number' => '103', 'tower' => 'A', 'floor' => 1, 'type' => '1BR', 'status' => 'Kosong'],
+            ['unit_number' => '201', 'tower' => 'A', 'floor' => 2, 'type' => '2BR', 'status' => 'Maintenance'],
+            ['unit_number' => '202', 'tower' => 'B', 'floor' => 2, 'type' => 'Studio', 'status' => 'Kosong'],
+        ];
+
+        foreach ($units as $unitData) {
+            Unit::create($unitData);
+        }
+
+        // 5. HUBUNGKAN USER WARGA KE UNIT 101 (Agar dia terdata sebagai penghuni)
+        // Kita ambil unit 101 yang statusnya 'Terisi' tadi
+        $unitTerisi = Unit::where('unit_number', '101')->first();
+
+        Resident::create([
+            'user_id' => $warga->id,
+            'unit_id' => $unitTerisi->id,
+            'start_date' => now(), // Masuk hari ini
+            'status' => 'Aktif',
         ]);
     }
 }

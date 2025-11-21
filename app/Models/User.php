@@ -12,39 +12,29 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
-     protected $fillable = [
-        'role_id', // <--- TAMBAHKAN INI
-        'name',
-        'email',
-        'password',
-        'phone',   // <--- TAMBAHKAN INI
-    ];
+    // ... (kode yang sudah ada)
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
+     * Get the role that owns the user.
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+    public function role()
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->belongsTo(Role::class);
+    }
+
+    /**
+     * Check if user is an admin.
+     */
+    public function isAdmin()
+    {
+        return $this->role && $this->role->role_name === 'Admin';
+    }
+
+    /**
+     * Check if user is a resident.
+     */
+    public function isResident()
+    {
+        return $this->role && $this->role->role_name === 'Resident';
     }
 }

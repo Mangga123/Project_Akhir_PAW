@@ -10,10 +10,21 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('units.index')" :active="request()->routeIs('units.index')">
+                <!-- Navigation Links (Desktop) -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <!-- Menu Dashboard -->
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
+
+                    <!-- Menu Data Unit -->
+                    <x-nav-link :href="route('admin.units.index')" :active="request()->routeIs('admin.units.*')">
                         {{ __('Data Unit') }}
+                    </x-nav-link>
+
+                    <!-- Menu Data Penghuni (BARU) -->
+                    <x-nav-link :href="route('admin.residents.index')" :active="request()->routeIs('admin.residents.*')">
+                        {{ __('Data Penghuni') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -52,7 +63,7 @@
                 </x-dropdown>
             </div>
 
-            <!-- Hamburger -->
+            <!-- Hamburger (Mobile Menu Button) -->
             <div class="-me-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -64,11 +75,20 @@
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
+    <!-- Responsive Navigation Menu (Mobile) -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.units.index')" :active="request()->routeIs('admin.units.*')">
+                {{ __('Data Unit') }}
+            </x-responsive-nav-link>
+
+            <!-- Menu Responsive Data Penghuni (BARU) -->
+            <x-responsive-nav-link :href="route('admin.residents.index')" :active="request()->routeIs('admin.residents.*')">
+                {{ __('Data Penghuni') }}
             </x-responsive-nav-link>
         </div>
 

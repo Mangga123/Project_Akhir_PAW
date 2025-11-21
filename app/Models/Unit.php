@@ -9,11 +9,13 @@ class Unit extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'unit_number',
-        'tower',
-        'floor',
-        'type',
-        'status',
-    ];
+    protected $guarded = ['id'];
+
+    /**
+     * Relasi: Unit bisa ditempati oleh satu Resident aktif.
+     */
+    public function resident()
+    {
+        return $this->hasOne(Resident::class)->where('status', 'Aktif');
+    }
 }
