@@ -34,4 +34,13 @@ class Resident extends Model
     {
         return $this->hasMany(Complaint::class);
     }
+
+    /**
+     * Relasi: Resident punya banyak Tagihan (Bills).
+     * (INI YANG BARU DITAMBAHKAN)
+     */
+    public function bills()
+    {
+        return $this->hasMany(Bill::class);
+    }
 }

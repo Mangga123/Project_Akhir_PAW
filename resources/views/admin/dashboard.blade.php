@@ -41,8 +41,7 @@
                     <h3 class="text-lg font-bold mb-4 text-gray-700">🔧 Kelola Apartemen</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         
-                        <!-- Tombol ke Halaman Units -->
-                        <!-- Pastikan route 'admin.units.index' ada di web.php, jika error ganti href="#" -->
+                        <!-- Tombol 1: Kelola Unit -->
                         <a href="{{ route('admin.units.index') }}" class="flex items-center justify-center p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition group cursor-pointer">
                             <div class="text-center">
                                 <span class="text-3xl mb-2 block">🏢</span>
@@ -50,8 +49,7 @@
                             </div>
                         </a>
 
-                        <!-- Tombol ke Halaman Residents -->
-                         <!-- Pastikan route 'admin.residents.index' ada di web.php, jika error ganti href="#" -->
+                        <!-- Tombol 2: Kelola Penghuni -->
                         <a href="{{ route('admin.residents.index') }}" class="flex items-center justify-center p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-green-500 hover:bg-green-50 transition group cursor-pointer">
                             <div class="text-center">
                                 <span class="text-3xl mb-2 block">👥</span>
@@ -59,13 +57,13 @@
                             </div>
                         </a>
 
-                        <!-- Tombol Placeholder (Coming Soon) -->
-                        <div class="flex items-center justify-center p-6 border-2 border-dashed border-gray-200 rounded-lg bg-gray-50 opacity-60 cursor-not-allowed">
+                        <!-- Tombol 3: Kelola Tagihan (SUDAH DIAKTIFKAN ✅) -->
+                        <a href="{{ route('admin.bills.index') }}" class="flex items-center justify-center p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-indigo-500 hover:bg-indigo-50 transition group cursor-pointer">
                             <div class="text-center">
                                 <span class="text-3xl mb-2 block">📄</span>
-                                <span class="font-bold text-gray-400">Tagihan (Segera Hadir)</span>
+                                <span class="font-bold text-gray-600 group-hover:text-indigo-600">Kelola Tagihan</span>
                             </div>
-                        </div>
+                        </a>
 
                     </div>
                 </div>

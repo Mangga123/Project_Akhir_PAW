@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\ResidentController;
 use App\Http\Controllers\Admin\ComplaintController as AdminComplaintController;
+use App\Http\Controllers\Admin\BillController;
 use App\Http\Controllers\Resident\ComplaintController as ResidentComplaintController;
+use App\Http\Controllers\Resident\PaymentController; // ✅ Tambahkan Controller Payment
 use App\Models\Unit;
 use App\Models\Resident;
 use App\Models\Complaint;
@@ -28,9 +30,9 @@ Route::get('/dashboard', function () {
         if (auth()->user()->isAdmin()) {
             return redirect()->route('admin.dashboard');
         } 
-        // Jika Resident (Warga), langsung ke halaman lapor komplain
+        // Jika Resident (Warga), arahkan ke halaman tagihan sebagai landing page utama
         else {
-            return redirect()->route('resident.complaints.index');
+            return redirect()->route('resident.bills.index');
         }
     }
     // Default fallback
@@ -66,6 +68,9 @@ Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->name('admin.'
     // 4. Complaint Management (Kelola Laporan)
     Route::get('/complaints', [AdminComplaintController::class, 'index'])->name('complaints.index');
     Route::put('/complaints/{complaint}', [AdminComplaintController::class, 'update'])->name('complaints.update');
+
+    // 5. Bill Management (Kelola Tagihan)
+    Route::resource('bills', BillController::class);
 });
 
 // ==================== RESIDENT ROUTES (PENGHUNI) ====================
@@ -74,6 +79,11 @@ Route::middleware(['auth', 'verified'])->prefix('resident')->name('resident.')->
     // Fitur Lapor Komplain
     Route::get('/complaints', [ResidentComplaintController::class, 'index'])->name('complaints.index');
     Route::post('/complaints', [ResidentComplaintController::class, 'store'])->name('complaints.store');
+
+    // Fitur Tagihan & Pembayaran (✅ BAGIAN BARU)
+    Route::get('/bills', [PaymentController::class, 'index'])->name('bills.index'); // Lihat Tagihan
+    Route::get('/payments/create/{bill}', [PaymentController::class, 'create'])->name('payments.create'); // Form Bayar
+    Route::post('/payments/{bill}', [PaymentController::class, 'store'])->name('payments.store'); // Simpan Bukti
 });
 
 require __DIR__.'/auth.php';
