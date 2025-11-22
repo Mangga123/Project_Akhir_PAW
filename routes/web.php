@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\ResidentController;
 use App\Http\Controllers\Admin\ComplaintController as AdminComplaintController;
 use App\Http\Controllers\Admin\BillController;
 use App\Http\Controllers\Resident\ComplaintController as ResidentComplaintController;
-use App\Http\Controllers\Resident\PaymentController; // ✅ Tambahkan Controller Payment
+use App\Http\Controllers\Resident\PaymentController;
 use App\Models\Unit;
 use App\Models\Resident;
 use App\Models\Complaint;
@@ -22,24 +22,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// ==================== DASHBOARD UMUM (REDIRECTOR) ====================
+// ==================== DASHBOARD UMUM ====================
 Route::get('/dashboard', function () {
-    // Cek jika user login
     if (auth()->check()) {
-        // Jika Admin, lempar ke Dashboard Admin
         if (auth()->user()->isAdmin()) {
             return redirect()->route('admin.dashboard');
-        } 
-        // Jika Resident (Warga), arahkan ke halaman tagihan sebagai landing page utama
-        else {
+        } else {
             return redirect()->route('resident.bills.index');
         }
     }
-    // Default fallback
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// ==================== PROFILE ROUTES ====================
+// ==================== PROFILE ====================
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -49,7 +44,6 @@ Route::middleware('auth')->group(function () {
 // ==================== ADMIN ROUTES ====================
 Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     
-    // 1. Admin Dashboard (Statistik)
     Route::get('/dashboard', function () {
         return view('admin.dashboard', [
             'totalUnits' => Unit::count(),
@@ -59,31 +53,44 @@ Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->name('admin.'
         ]);
     })->name('dashboard');
 
-    // 2. Unit Management (CRUD Unit)
     Route::resource('units', UnitController::class);
-
-    // 3. Resident Management (CRUD Penghuni)
     Route::resource('residents', ResidentController::class);
-
-    // 4. Complaint Management (Kelola Laporan)
+    
+    // Komplain
     Route::get('/complaints', [AdminComplaintController::class, 'index'])->name('complaints.index');
     Route::put('/complaints/{complaint}', [AdminComplaintController::class, 'update'])->name('complaints.update');
 
-    // 5. Bill Management (Kelola Tagihan)
+    // Tagihan (Bill)
     Route::resource('bills', BillController::class);
+    
+    // ✅ ROUTE BARU: Konfirmasi Pembayaran
+    Route::post('/bills/{bill}/confirm', [BillController::class, 'confirmPayment'])->name('bills.confirm');
 });
 
-// ==================== RESIDENT ROUTES (PENGHUNI) ====================
+// ==================== RESIDENT ROUTES ====================
 Route::middleware(['auth', 'verified'])->prefix('resident')->name('resident.')->group(function () {
-    
-    // Fitur Lapor Komplain
+    // Komplain
     Route::get('/complaints', [ResidentComplaintController::class, 'index'])->name('complaints.index');
     Route::post('/complaints', [ResidentComplaintController::class, 'store'])->name('complaints.store');
 
-    // Fitur Tagihan & Pembayaran (✅ BAGIAN BARU)
-    Route::get('/bills', [PaymentController::class, 'index'])->name('bills.index'); // Lihat Tagihan
-    Route::get('/payments/create/{bill}', [PaymentController::class, 'create'])->name('payments.create'); // Form Bayar
-    Route::post('/payments/{bill}', [PaymentController::class, 'store'])->name('payments.store'); // Simpan Bukti
+    // Tagihan
+    Route::get('/bills', [PaymentController::class, 'index'])->name('bills.index');
+    Route::get('/payments/create/{bill}', [PaymentController::class, 'create'])->name('payments.create');
+    Route::post('/payments/{bill}', [PaymentController::class, 'store'])->name('payments.store');
 });
 
 require __DIR__.'/auth.php';
+
+// ==================== RESIDENT ROUTES ====================
+Route::middleware(['auth', 'verified'])->prefix('resident')->name('resident.')->group(function () {
+    
+    // Fitur Komplain (Yang sudah ada)
+    Route::get('/complaints', [ResidentComplaintController::class, 'index'])->name('complaints.index');
+    Route::post('/complaints', [ResidentComplaintController::class, 'store'])->name('complaints.store');
+
+    // Fitur Tagihan & Bayar (TAMBAHAN BARU INI) 
+    // Jangan lupa import controller di paling atas: use App\Http\Controllers\Resident\PaymentController;
+    Route::get('/bills', [PaymentController::class, 'index'])->name('bills.index');
+    Route::get('/payments/{bill}', [PaymentController::class, 'create'])->name('payments.create');
+    Route::post('/payments/{bill}', [PaymentController::class, 'store'])->name('payments.store');
+});
