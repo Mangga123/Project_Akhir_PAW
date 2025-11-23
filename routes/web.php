@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 
 // ==================== DASHBOARD UMUM ====================
+// buat tes 3
 Route::get('/dashboard', function () {
     if (auth()->check()) {
         if (auth()->user()->isAdmin()) {
@@ -87,4 +88,5 @@ Route::middleware(['auth', 'verified'])->prefix('resident')->name('resident.')->
     Route::get('/bills', [PaymentController::class, 'index'])->name('bills.index');
     Route::get('/payments/{bill}', [PaymentController::class, 'create'])->name('payments.create');
     Route::post('/payments/{bill}', [PaymentController::class, 'store'])->name('payments.store');
+
 });
