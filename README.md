@@ -1,6 +1,3 @@
-Siap! Aku sudah masukkan **informasi akun login Warga & Admin** langsung ke README-mu dengan format premium, rapi, dan estetis.
-Kamu tinggal copy–paste seluruh blok ini ke README.md kamu.
-
 ---
 
 # 🌇 Realtiy Apartment
@@ -158,10 +155,3 @@ npm run dev
 Distributed under the MIT License.
 
 ---
-
-Kalau mau, aku bisa bikin **README versi premium banget**:
-✨ header SVG gradient
-✨ icon blur glassmorphism
-✨ layout kiri-tengah-kanan kayak template SaaS
-
-Tinggal bilang!
