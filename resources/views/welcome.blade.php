@@ -32,11 +32,18 @@
             </div>
 
             <nav class="absolute top-0 left-0 w-full z-20 px-6 md:px-16 py-8 flex justify-between items-center">
-                <div class="flex items-center gap-2 text-[#A8E6CF] font-bold text-2xl tracking-wide">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                    <span>Realty</span>
+                
+                <div class="flex flex-col items-start gap-1">
+                    <div class="flex items-center gap-2 text-[#A8E6CF] font-bold text-2xl tracking-wide">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span>Realty</span>
+                    </div>
+
+                    <a href="{{ route('login') }}" class="text-sm font-bold text-white border-2 border-white hover:bg-white hover:text-black px-4 py-1 rounded-full transition ml-1">
+    Admin Login &rarr;
+</a>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-12 text-gray-100 text-sm font-medium tracking-wide">
@@ -91,19 +98,19 @@
                 <div class="absolute bottom-12 w-full px-10 hidden md:flex justify-center items-center gap-4 text-xs text-white/90">
                     <span class="font-bold tracking-wide mr-2">Latest Listings:</span>
                     
-                    <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
+                    <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-10 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
                         <span class="w-2 h-2 rounded-full bg-[#A8E6CF]"></span>
-                        Modern Family Home
+                        Mohammad Vizie Hafiyyan Kanishka
+                    </a>
+                    
+                    <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-10 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
+                        <span class="w-2 h-2 rounded-full bg-[#A8E6CF]"></span>
+                        Angga Prima Ramadhan
                     </a>
                     
                     <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
                         <span class="w-2 h-2 rounded-full bg-[#A8E6CF]"></span>
-                        Chic Downtown Condo
-                    </a>
-                    
-                    <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
-                        <span class="w-2 h-2 rounded-full bg-[#A8E6CF]"></span>
-                        Cottage Near Mountains
+                        Elizabeth
                     </a>
                 </div>
 
@@ -136,7 +143,7 @@
                                 <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">TOWER A</h3>
-                            <p class="text-sm text-gray-500 mb-3">456 Maple Street, Denver, CO 80202</p>
+                            <p class="text-sm text-gray-500 mb-3">456 Kayutangan, Vizie, 80202</p>
                             <p class="text-[#6FCF97] font-bold text-lg">????$</p>
                         </div>
 
@@ -149,7 +156,7 @@
                                 <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">TOWER B</h3>
-                            <p class="text-sm text-gray-500 mb-3">789 Pine Avenue, Denver, CO 80203</p>
+                            <p class="text-sm text-gray-500 mb-3">789 Angga, Denver, CO 80203</p>
                             <p class="text-[#6FCF97] font-bold text-lg">???$</p>
                         </div>
 
@@ -162,7 +169,7 @@
                                 <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">TOWER C</h3>
-                            <p class="text-sm text-gray-500 mb-3">123 Oak Lane, Boulder, CO 80302</p>
+                            <p class="text-sm text-gray-500 mb-3">123 Elizabeth, Levnoune, CO 80302</p>
                             <p class="text-[#6FCF97] font-bold text-lg">????$</p>
                         </div>
 
@@ -185,7 +192,7 @@
                                 <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">STUDIO</h3>
-                            <p class="text-sm text-gray-500 mb-3">101 Aspen Drive, Aspen, CO 81611</p>
+                            <p class="text-sm text-gray-500 mb-3">Filkom, Aspen, CO 81611</p>
                             <p class="text-[#6FCF97] font-bold text-lg">???$</p>
                         </div>
 
@@ -198,7 +205,7 @@
                                 <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">ONE BEDROOM</h3>
-                            <p class="text-sm text-gray-500 mb-3">789 Elm Street, Fort Collins, CO 80521</p>
+                            <p class="text-sm text-gray-500 mb-3">Filkom, Fort Collins, CO 80521</p>
                             <p class="text-[#6FCF97] font-bold text-lg">????$</p>
                         </div>
 
@@ -211,7 +218,7 @@
                                 <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">TWO BEDROOM</h3>
-                            <p class="text-sm text-gray-500 mb-3">345 Cedar Road, Colorado Springs, CO 80907</p>
+                            <p class="text-sm text-gray-500 mb-3">Bromo, Ijen Springs, CO 80907</p>
                             <p class="text-[#6FCF97] font-bold text-lg">???$</p>
                         </div>
 
@@ -336,7 +343,7 @@
                     </div>
 
                     <div class="flex flex-col gap-6 lg:pt-12"> <div class="relative w-full h-[300px] lg:h-[320px] rounded-2xl overflow-hidden group shadow-md">
-                            <img src="https://images.unsplash.com/photo-1639664701039-f747268e2243?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Moving Boxes Interior" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                            <img src="https://i.pinimg.com/736x/bd/9d/f0/bd9df0ad61738c98fefb6cd1ace4eeb1.jpg" alt="Moving Boxes Interior" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                             
                             <div class="absolute bottom-0 left-0 p-6 w-full">
@@ -380,6 +387,118 @@
                 </div>
             </div>
         </section>
+
+        <section class="w-full bg-white px-4 md:px-8 pb-16 mt-32">
+            
+            <div class="max-w-5xl mx-auto">
+                
+                <div class="relative bg-[#74A88E] rounded-[24px] py-8 px-6 md:py-12 md:px-10 text-center overflow-hidden shadow-md flex flex-col justify-center items-center">
+                    
+                    <div class="absolute -right-4 -bottom-12 opacity-20 pointer-events-none">
+                        <svg width="250" height="250" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                        </svg>
+                    </div>
+
+                    <div class="relative z-10 max-w-2xl mx-auto">
+                        <h2 class="text-2xl md:text-3xl font-medium text-white mb-2 leading-tight">
+                            Let's Simply Begin With Realty
+                        </h2>
+                        <p class="text-white/90 text-[10px] md:text-xs mb-6 font-light max-w-md mx-auto leading-relaxed">
+                            Blandit Aliquam Donec Sed Morbi Congue Eget Lorem Viverra Porta Id Lobortis.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                            <a href="#" class="bg-[#C1F0D0] text-[#2D5B43] px-5 py-2 rounded-full font-semibold hover:bg-white transition flex items-center gap-2 shadow-sm text-[10px] md:text-xs">
+                                Get In Touch
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                            <a href="#" class="border border-white/50 text-white px-5 py-2 rounded-full font-semibold hover:bg-white/10 transition flex items-center gap-2 text-[10px] md:text-xs">
+                                Get Started
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-10 mt-10 px-4 md:px-8 opacity-50">
+                    <span class="text-2xl md:text-3xl font-serif text-gray-300">Mellow</span>
+                    <span class="text-2xl md:text-3xl font-sans font-bold text-gray-300">Mystic</span>
+                    <span class="text-2xl md:text-3xl font-light text-gray-300">Ultras</span>
+                    <span class="text-2xl md:text-3xl font-serif italic text-gray-300">Telly</span>
+                    <span class="text-xl md:text-2xl font-mono font-bold text-gray-300 tracking-widest">BISTRO</span>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="bg-[#1A1A1A] text-white pt-16 pb-8 px-6 md:px-16">
+            <div class="max-w-5xl mx-auto"> <div class="flex flex-col md:flex-row justify-between items-start mb-10">
+                    <div class="flex items-center gap-2 text-[#A8E6CF] font-bold text-xl mb-6 md:mb-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Realty
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <a href="#" class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#A8E6CF] hover:text-[#1A1A1A] transition">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#A8E6CF] hover:text-[#1A1A1A] transition">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-8 mb-8">
+                    <div>
+                        <h4 class="text-sm font-medium text-white mb-4">Contact Us</h4>
+                        <ul class="space-y-2 text-[10px] md:text-xs text-gray-400">
+                            <li>123 Main Street Denver</li>
+                            <li>+333-3-666999</li>
+                            <li>info@yourinfo.com</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-white mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-[10px] md:text-xs text-gray-400">
+                            <li><a href="#" class="hover:text-[#A8E6CF] transition">Home</a></li>
+                            <li><a href="#" class="hover:text-[#A8E6CF] transition">About Us</a></li>
+                            <li><a href="#" class="hover:text-[#A8E6CF] transition">Blogs</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-white mb-4">Categories</h4>
+                        <ul class="space-y-2 text-[10px] md:text-xs text-gray-400">
+                            <li><a href="#" class="hover:text-[#A8E6CF] transition">To Sell</a></li>
+                            <li><a href="#" class="hover:text-[#A8E6CF] transition">To Purchase</a></li>
+                            <li><a href="#" class="hover:text-[#A8E6CF] transition">For Rental</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-white mb-4">Help</h4>
+                        <ul class="space-y-2 text-[10px] md:text-xs text-gray-400">
+                            <li><a href="#" class="hover:text-[#A8E6CF] transition">Privacy</a></li>
+                            <li><a href="#" class="hover:text-[#A8E6CF] transition">Condition</a></li>
+                            <li><a href="#" class="hover:text-[#A8E6CF] transition">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 border-t border-white/10 pt-4">
+                    <p>&copy; 2025 Realty by Gemini.</p>
+                    <p>Designed by <a href="#" class="text-white hover:underline">TemplatesJungle</a></p>
+                </div>
+
+            </div>
+        </footer>
+        
         </section>
         
     </main>
