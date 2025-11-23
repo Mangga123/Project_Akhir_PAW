@@ -1,3 +1,8 @@
+Siap! Aku sudah masukkan **informasi akun login Warga & Admin** langsung ke README-mu dengan format premium, rapi, dan estetis.
+Kamu tinggal copy–paste seluruh blok ini ke README.md kamu.
+
+---
+
 # 🌇 Realtiy Apartment
 
 ### *Modern Web-Based Apartment Management Platform*
@@ -16,25 +21,36 @@
 
 ---
 
-✨ Features
+## 🔑 **Demo Login Accounts**
 
-Klik untuk langsung menuju penjelasan ↓
+Untuk memudahkan pengujian, gunakan akun berikut:
 
-🏢 Manage apartment units & occupancy
+### **👤 Login sebagai Warga**
 
-👥 Resident management & registration
+```
+Email: warga@gmail.com
+Password: password
+```
 
-💵 Monthly billing & invoice-tracking
+### **🛠️ Login sebagai Admin**
 
-🧾 Payment history & receipt generation
+```
+Email: admin@gmail.com
+Password: password
+```
 
-🛠️ Facility complaint submission system
+---
 
-📊 Admin dashboard with charts--stats
+## ✨ **Features**
 
-🔐 Secure authentication--role-based-access
-
-⚙️ Responsive--minimalistic-ui
+* 🏢 Manage apartment units & occupancy
+* 👥 Resident management & registration
+* 💵 Monthly billing & invoice tracking
+* 🧾 Payment history & receipt generation
+* 🛠️ Facility complaint submission system
+* 📊 Admin dashboard with charts & stats
+* 🔐 Secure authentication & role-based access
+* ⚙️ Responsive & minimalistic UI
 
 ---
 
@@ -143,3 +159,9 @@ Distributed under the MIT License.
 
 ---
 
+Kalau mau, aku bisa bikin **README versi premium banget**:
+✨ header SVG gradient
+✨ icon blur glassmorphism
+✨ layout kiri-tengah-kanan kayak template SaaS
+
+Tinggal bilang!
