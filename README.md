@@ -1,8 +1,3 @@
-Siap! Berikut **README Premium** — aesthetic, rapi, pakai badge, emoji, table of contents, dan layout bergaya produk profesional.
-Cocok buat tugas akhir ataupun upload GitHub agar terlihat *niat* banget 🚀✨
-
----
-
 # 🏢 ApartmentSys — Modern Apartment Management System
 
 <p align="center">
@@ -192,15 +187,3 @@ password: password
 ```
 MIT License — free to modify and use.
 ```
-
----
-
-## 💬 Need a More Custom Version?
-
-Aku bisa buatkan:
-✨ README premium + gradient + separator aesthetic
-✨ README full dengan screenshot + badge CI/CD
-✨ README versi dark mode
-✨ README versi profesional untuk portfolio
-
-Tinggal bilang mau gaya apa!
