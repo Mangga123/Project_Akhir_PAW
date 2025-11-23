@@ -16,16 +16,25 @@
 
 ---
 
-## ✨ **Features**
+✨ Features
 
-* 🏢 Manage apartment units & occupancy
-* 👥 Resident management & registration
-* 💵 Monthly billing & invoice tracking
-* 🧾 Payment history & receipt generation
-* 🛠️ Facility complaint submission system
-* 📊 Admin dashboard with charts & stats
-* 🔐 Secure authentication & role-based access
-* ⚙️ Responsive & minimalistic UI
+Klik untuk langsung menuju penjelasan ↓
+
+🏢 Manage apartment units & occupancy
+
+👥 Resident management & registration
+
+💵 Monthly billing & invoice-tracking
+
+🧾 Payment history & receipt generation
+
+🛠️ Facility complaint submission system
+
+📊 Admin dashboard with charts--stats
+
+🔐 Secure authentication--role-based-access
+
+⚙️ Responsive--minimalistic-ui
 
 ---
 
