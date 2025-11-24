@@ -493,7 +493,7 @@
 
                 <div class="flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 border-t border-white/10 pt-4">
                     <p>&copy; 2025 Realty by Gemini.</p>
-                    <p>Designed by <a href="#" class="text-white hover:underline">TemplatesJungle</a></p>
+                    <p>Malang <a href="#" class="text-white hover:underline">20139</a></p>
                 </div>
 
             </div>
