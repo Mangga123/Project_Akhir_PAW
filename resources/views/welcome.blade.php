@@ -12,9 +12,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
+        html { scroll-behavior: smooth; } /* Tambahkan baris ini agar scroll-nya mulus */
+        body { font-family: 'Montserrat', sans-serif; }
+    </style>
     </style>
 </head>
 <body class="antialiased text-gray-800 bg-gray-50">
@@ -31,7 +31,7 @@
                 <div class="absolute inset-0 bg-black/30"></div>
             </div>
 
-            <nav class="absolute top-0 left-0 w-full z-20 px-6 md:px-16 py-8 flex justify-between items-center">
+           <nav class="absolute top-0 left-0 w-full z-20 px-6 md:px-16 py-8 flex justify-between items-center">
                 
                 <div class="flex flex-col items-start gap-1">
                     <div class="flex items-center gap-2 text-[#A8E6CF] font-bold text-2xl tracking-wide">
@@ -42,15 +42,15 @@
                     </div>
 
                     <a href="{{ route('login') }}" class="text-sm font-bold text-white border-2 border-white hover:bg-white hover:text-black px-4 py-1 rounded-full transition ml-1">
-    Admin Login &rarr;
-</a>
+                Admin Login &rarr;
+                    </a>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-12 text-gray-100 text-sm font-medium tracking-wide">
                     <a href="#" class="hover:text-white hover:underline underline-offset-4 decoration-2 transition">Home</a>
-                    <a href="#" class="hover:text-white transition">About Us</a>
-                    <a href="#" class="hover:text-white transition">Buy</a>
-                    <a href="#" class="hover:text-white transition">Contact Us</a>
+                    <a href="{{ route('about') }}" class="hover:text-white transition">About Us</a>
+                    <a href="#buy" class="hover:text-white transition">Buy</a>
+                    <a href="{{ route('contact') }}" class="hover:text-white transition">Contact Us</a>
                 </div>
                 
                 <div class="md:hidden text-white">
@@ -98,26 +98,33 @@
                 <div class="absolute bottom-12 w-full px-10 hidden md:flex justify-center items-center gap-4 text-xs text-white/90">
                     <span class="font-bold tracking-wide mr-2">Latest Listings:</span>
                     
-                    <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-10 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
+                    <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
                         <span class="w-2 h-2 rounded-full bg-[#A8E6CF]"></span>
-                        Mohammad Vizie Hafiyyan Kanishka
-                    </a>
-                    
-                    <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-10 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
-                        <span class="w-2 h-2 rounded-full bg-[#A8E6CF]"></span>
-                        Angga Prima Ramadhan
+                        MOHAMMAD VIZIE HAFIYYAN KANISHKA
                     </a>
                     
                     <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
                         <span class="w-2 h-2 rounded-full bg-[#A8E6CF]"></span>
-                        Elizabeth
+                        ANGGA
+                    </a>
+                    
+                    <a href="#" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-md border border-white/10 transition">
+                        <span class="w-2 h-2 rounded-full bg-[#A8E6CF]"></span>
+                        ELIZABETH
                     </a>
                 </div>
 
             </div>
         </section>
 
-        <section class="relative w-full bg-white py-20 px-6 md:px-16">
+
+
+
+
+
+
+
+        <section id="buy" class="relative w-full bg-white py-20 px-6 md:px-16">
             
             <div class="absolute top-10 left-0 opacity-10 pointer-events-none">
                 <svg width="300" height="300" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -136,40 +143,40 @@
                         
                         <div class="group cursor-pointer">
                             <div class="relative overflow-hidden rounded-xl h-64 w-full mb-4">
-                                <img src="https://i.pinimg.com/736x/a4/10/56/a41056cdfd827a6adfdac0f4467bf8af.jpg" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Tower A">
+                                <img src="https://i.pinimg.com/736x/98/35/3d/98353d71f395306b117f14c6b5a70adf.jpg" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Tower A">
                                 <span class="absolute top-4 left-4 bg-gray-900/50 text-white text-[10px] px-3 py-1 rounded-full backdrop-blur-sm">For Rent</span>
                             </div>
                             <div class="text-xs text-gray-500 mb-1 flex gap-4">
-                                <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
+                                <span>Green enviroment</span> <span>19 floor</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">TOWER A</h3>
-                            <p class="text-sm text-gray-500 mb-3">456 Kayutangan, Vizie, 80202</p>
+                            <p class="text-sm text-gray-500 mb-3">456 Soehat, Graya, CO 422</p>
                             <p class="text-[#6FCF97] font-bold text-lg">????$</p>
                         </div>
 
                         <div class="group cursor-pointer">
                             <div class="relative overflow-hidden rounded-xl h-64 w-full mb-4">
-                                <img src="https://i.pinimg.com/736x/85/b1/8b/85b18b02b5833937ce742174cb5e1e76.jpg" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Tower B">
+                                <img src="https://i.pinimg.com/736x/26/56/8d/26568d52cbbc0b5cafe4c7087a02e20c.jpg" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Tower B">
                                 <span class="absolute top-4 left-4 bg-gray-900/50 text-white text-[10px] px-3 py-1 rounded-full backdrop-blur-sm">For Rent</span>
                             </div>
                             <div class="text-xs text-gray-500 mb-1 flex gap-4">
-                                <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
+                                <span>4 garden</span> <span>23 floor </span> <span>1239 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">TOWER B</h3>
-                            <p class="text-sm text-gray-500 mb-3">789 Angga, Denver, CO 80203</p>
+                            <p class="text-sm text-gray-500 mb-3">789 Sigura Gura, Bendungan, CO 80203</p>
                             <p class="text-[#6FCF97] font-bold text-lg">???$</p>
                         </div>
 
                         <div class="group cursor-pointer">
                             <div class="relative overflow-hidden rounded-xl h-64 w-full mb-4">
-                                <img src="https://i.pinimg.com/736x/b9/c1/d4/b9c1d461a1672cc1fb17aa4974adb9cd.jpg" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Tower C">
+                                <img src="https://i.pinimg.com/1200x/fb/00/08/fb00086c7b7f7064d8e2d60321248b68.jpg" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Tower C">
                                 <span class="absolute top-4 left-4 bg-gray-900/50 text-white text-[10px] px-3 py-1 rounded-full backdrop-blur-sm">For Rent</span>
                             </div>
                             <div class="text-xs text-gray-500 mb-1 flex gap-4">
-                                <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
+                                <span>2 garden and close to city</span> <span>4 gate</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">TOWER C</h3>
-                            <p class="text-sm text-gray-500 mb-3">123 Elizabeth, Levnoune, CO 80302</p>
+                            <p class="text-sm text-gray-500 mb-3">123 FILKOM, VETERAN, CO 21</p>
                             <p class="text-[#6FCF97] font-bold text-lg">????$</p>
                         </div>
 
@@ -185,40 +192,40 @@
                         
                         <div class="group cursor-pointer">
                             <div class="relative overflow-hidden rounded-xl h-64 w-full mb-4">
-                                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Studio">
+                                <img src="https://i.pinimg.com/1200x/ab/f3/0e/abf30e1a16b5fd4441d749c0778d7a2e.jpg" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Studio">
                                 <span class="absolute top-4 left-4 bg-gray-900/50 text-white text-[10px] px-3 py-1 rounded-full backdrop-blur-sm">For Rent</span>
                             </div>
                             <div class="text-xs text-gray-500 mb-1 flex gap-4">
                                 <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">STUDIO</h3>
-                            <p class="text-sm text-gray-500 mb-3">Filkom, Aspen, CO 81611</p>
+                            <p class="text-sm text-gray-500 mb-3">1 Elite room with fully cozy</p>
                             <p class="text-[#6FCF97] font-bold text-lg">???$</p>
                         </div>
 
                         <div class="group cursor-pointer">
                             <div class="relative overflow-hidden rounded-xl h-64 w-full mb-4">
-                                <img src="https://images.unsplash.com/photo-1581209410127-8211e90da024?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="One Bedroom">
+                                <img src="https://i.pinimg.com/1200x/77/1c/a2/771ca2589506100159dfe138142677ff.jpg" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="One Bedroom">
                                 <span class="absolute top-4 left-4 bg-gray-900/50 text-white text-[10px] px-3 py-1 rounded-full backdrop-blur-sm">For Rent</span>
                             </div>
                             <div class="text-xs text-gray-500 mb-1 flex gap-4">
                                 <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">ONE BEDROOM</h3>
-                            <p class="text-sm text-gray-500 mb-3">Filkom, Fort Collins, CO 80521</p>
+                            <p class="text-sm text-gray-500 mb-3">Best for personal enviroment</p>
                             <p class="text-[#6FCF97] font-bold text-lg">????$</p>
                         </div>
 
                         <div class="group cursor-pointer">
                             <div class="relative overflow-hidden rounded-xl h-64 w-full mb-4">
-                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Two Bedroom">
+                                <img src="https://i.pinimg.com/1200x/b6/be/83/b6be83496e8eba760237d329c3b5cb68.jpg" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-500" alt="Two Bedroom">
                                 <span class="absolute top-4 left-4 bg-gray-900/50 text-white text-[10px] px-3 py-1 rounded-full backdrop-blur-sm">For Rent</span>
                             </div>
-                            <div class="text-xs text-gray-500 mb-1 flex gap-4">  
+                            <div class="text-xs text-gray-500 mb-1 flex gap-4">
                                 <span>4 Beds</span> <span>2 Bath</span> <span>1203 Sqft.</span>
                             </div>
                             <h3 class="text-xl font-bold text-gray-900 mb-1">TWO BEDROOM</h3>
-                            <p class="text-sm text-gray-500 mb-3">Bromo, Ijen Springs, CO 80907</p>
+                            <p class="text-sm text-gray-500 mb-3">For comfortability with another and larger room</p>
                             <p class="text-[#6FCF97] font-bold text-lg">???$</p>
                         </div>
 
@@ -227,6 +234,11 @@
 
             </div>
         </section>
+
+
+
+
+
 
         <section class="w-full bg-[#F2F9F5] py-24 px-6 md:px-16">
             
@@ -290,7 +302,15 @@
             </div>
         </section>
 
-       <section class="w-full bg-white py-16 px-6 md:px-16"> <div class="max-w-6xl mx-auto">
+
+
+
+
+
+
+
+
+<section class="w-full bg-white py-16 px-6 md:px-16"> <div class="max-w-6xl mx-auto">
 
                 <div class="flex flex-col items-center text-center mb-12"> <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#74A88E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mb-4">
                         <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
@@ -335,7 +355,7 @@
                                     Siap membantu anda memilih yang terbaik demi ruangan yang nyaman.
                                 </p>
                                 <a href="#" class="text-white font-semibold text-xs flex items-center gap-2 hover:gap-3 transition-all">
-                                    Read More <span class="text-base">&rsaquo;</span>
+                               
                                 </a>
                             </div>
                         </div>
@@ -343,7 +363,7 @@
                     </div>
 
                     <div class="flex flex-col gap-6 lg:pt-12"> <div class="relative w-full h-[300px] lg:h-[320px] rounded-2xl overflow-hidden group shadow-md">
-                            <img src="https://i.pinimg.com/736x/bd/9d/f0/bd9df0ad61738c98fefb6cd1ace4eeb1.jpg" alt="Moving Boxes Interior" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1581578017093-cd30fba4e9d5?q=80&w=800&auto=format&fit=crop" alt="Moving Boxes Interior" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                             
                             <div class="absolute bottom-0 left-0 p-6 w-full">
@@ -357,7 +377,7 @@
                                     Membuat kamar anda menjadi lebih sesuai dengan kebutuhan anda.
                                 </p>
                                 <a href="#" class="text-white font-semibold text-xs flex items-center gap-2 hover:gap-3 transition-all">
-                                    Get Started <span class="text-base">&rsaquo;</span>
+                            
                                 </a>
                             </div>
                         </div>
@@ -377,7 +397,6 @@
                                     Sistem yang dijamin membuat anda tidak menunggu lama.
                                 </p>
                                 <a href="#" class="text-white font-semibold text-xs flex items-center gap-2 hover:gap-3 transition-all">
-                                    Read More <span class="text-base">&rsaquo;</span>
                                 </a>
                             </div>
                         </div>
@@ -387,6 +406,11 @@
                 </div>
             </div>
         </section>
+
+
+
+
+
 
         <section class="w-full bg-white px-4 md:px-8 pb-16 mt-32">
             
@@ -427,11 +451,10 @@
                 </div>
 
                 <div class="flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-10 mt-10 px-4 md:px-8 opacity-50">
-                    <span class="text-2xl md:text-3xl font-serif text-gray-300">Mellow</span>
-                    <span class="text-2xl md:text-3xl font-sans font-bold text-gray-300">Mystic</span>
-                    <span class="text-2xl md:text-3xl font-light text-gray-300">Ultras</span>
-                    <span class="text-2xl md:text-3xl font-serif italic text-gray-300">Telly</span>
-                    <span class="text-xl md:text-2xl font-mono font-bold text-gray-300 tracking-widest">BISTRO</span>
+                    <span class="text-2xl md:text-3xl font-serif text-gray-300">VIZIE</span>
+                    <span class="text-2xl md:text-3xl font-sans font-bold text-gray-300">PROJECT</span>
+                    <span class="text-2xl md:text-3xl font-light text-gray-300">ANGGA</span>
+                    <span class="text-xl md:text-2xl font-mono font-bold text-gray-300 tracking-widest">ELIZABETH</span>
                 </div>
 
             </div>
@@ -460,8 +483,8 @@
                     <div>
                         <h4 class="text-sm font-medium text-white mb-4">Contact Us</h4>
                         <ul class="space-y-2 text-[10px] md:text-xs text-gray-400">
-                            <li>123 Main Street Denver</li>
-                            <li>+333-3-666999</li>
+                            <li>123 FILKOM MALANG</li>
+                            <li>+1923891</li>
                             <li>info@yourinfo.com</li>
                         </ul>
                     </div>
@@ -470,13 +493,11 @@
                         <ul class="space-y-2 text-[10px] md:text-xs text-gray-400">
                             <li><a href="#" class="hover:text-[#A8E6CF] transition">Home</a></li>
                             <li><a href="#" class="hover:text-[#A8E6CF] transition">About Us</a></li>
-                            <li><a href="#" class="hover:text-[#A8E6CF] transition">Blogs</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-sm font-medium text-white mb-4">Categories</h4>
                         <ul class="space-y-2 text-[10px] md:text-xs text-gray-400">
-                            <li><a href="#" class="hover:text-[#A8E6CF] transition">To Sell</a></li>
                             <li><a href="#" class="hover:text-[#A8E6CF] transition">To Purchase</a></li>
                             <li><a href="#" class="hover:text-[#A8E6CF] transition">For Rental</a></li>
                         </ul>
@@ -485,22 +506,21 @@
                         <h4 class="text-sm font-medium text-white mb-4">Help</h4>
                         <ul class="space-y-2 text-[10px] md:text-xs text-gray-400">
                             <li><a href="#" class="hover:text-[#A8E6CF] transition">Privacy</a></li>
-                            <li><a href="#" class="hover:text-[#A8E6CF] transition">Condition</a></li>
                             <li><a href="#" class="hover:text-[#A8E6CF] transition">FAQs</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 border-t border-white/10 pt-4">
-                    <p>&copy; 2025 Realty by Gemini.</p>
-                    <p>Malang <a href="#" class="text-white hover:underline">20139</a></p>
+                    <p>&copy; 2025 Realty by Vizie hafiyyan.</p>
+                    <p>Designed by figma vizie<a href="#" class="text-white hover:underline"></a></p>
                 </div>
 
             </div>
         </footer>
-        
-        </section>
-        
+
+
+
     </main>
 </body>
 </html>

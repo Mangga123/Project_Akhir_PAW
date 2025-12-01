@@ -16,8 +16,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//  ROUTE BARU: Halaman Home / Testimoni
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
+// Route untuk Halaman About Us
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+// Route untuk Halaman Contact Us
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
 // ==================== DASHBOARD UMUM ====================
-// buat tes 3
 Route::get('/dashboard', function () {
     if (auth()->check()) {
         if (auth()->user()->isAdmin()) {
@@ -58,7 +72,7 @@ Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->name('admin.'
     // Tagihan (Bill)
     Route::resource('bills', BillController::class);
     
-    // ✅ ROUTE BARU: Konfirmasi Pembayaran
+    // Konfirmasi Pembayaran
     Route::post('/bills/{bill}/confirm', [BillController::class, 'confirmPayment'])->name('bills.confirm');
 });
 
@@ -75,18 +89,3 @@ Route::middleware(['auth', 'verified'])->prefix('resident')->name('resident.')->
 });
 
 require __DIR__.'/auth.php';
-
-// ==================== RESIDENT ROUTES ====================
-Route::middleware(['auth', 'verified'])->prefix('resident')->name('resident.')->group(function () {
-    
-    // Fitur Komplain (Yang sudah ada)
-    Route::get('/complaints', [ResidentComplaintController::class, 'index'])->name('complaints.index');
-    Route::post('/complaints', [ResidentComplaintController::class, 'store'])->name('complaints.store');
-
-    // Fitur Tagihan & Bayar (TAMBAHAN BARU INI) 
-    // Jangan lupa import controller di paling atas: use App\Http\Controllers\Resident\PaymentController;
-    Route::get('/bills', [PaymentController::class, 'index'])->name('bills.index');
-    Route::get('/payments/{bill}', [PaymentController::class, 'create'])->name('payments.create');
-    Route::post('/payments/{bill}', [PaymentController::class, 'store'])->name('payments.store');
-
-});
