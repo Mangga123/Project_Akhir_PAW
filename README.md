@@ -7,9 +7,17 @@ STATUS: Active | VERSION: 1.0 | FRAMEWORK: Laravel | TYPE: Final Project
 ---
 ## 1. Cara Penggunaan
 
+## HOME WELCOME PAGE 
+Di welcome page, saat scroll bawah bisa melihat menu apartemen yang disediakan, serta ada beberapa reason kenapa memilih kami adalah yang terbaik, 
 
+- Jika klik " ABOUT US " maka bisa melihat visi misi serta apa itu realty ( Produk kami )
+- jika klik " CONTACT US" maka bisa melihat kontak kami, " NAMA ANGGOTA KEL " 
 
-# ADMINN #
+- di facility bisa melihat kami meyediakan Kolam Renan, Lapangan tenis
+
+Untuk mulai masuk ke managementnya maka bisa klik " Login " 
+
+# CARA KERJA ADMINN ACCOUNT #
 
 1. DASHBOARD : Di laman dashboard home admin* akan diperlihtkan menu dibagian kiri, dan di overview terlihat statistik secara realtime total unit, unit terisi, penghuni aktif, komplain yang merupakan dari sistem management
 
@@ -49,8 +57,7 @@ STATUS: Active | VERSION: 1.0 | FRAMEWORK: Laravel | TYPE: Final Project
 
 
 
-
-# WARGA # 
+# CARA KERJA WARGA/GUEST ACCOUNT # 
 
  1. Di Laman home klik " Login " 
 
@@ -134,14 +141,7 @@ Dokumentasi *endpoint* atau jalur URL utama yang tersedia dalam aplikasi:
 | **Warga**  | GET      | `/resident/facility-booking` | Booking Fasilitas |
 
 
-## Preview
-
-> A clean and modern interface to manage apartment units, residents, billing, facilities, and daily administrative activities — all in one streamlined platform.
-
-## 1. Landing Page & Facility
-
-
-## Demo Login Accounts
+## 4. Demo Login Accounts
 
 Untuk memudahkan pengujian (Testing), gunakan akun berikut:
 
@@ -160,7 +160,7 @@ Login sebagai Admin
 * **Password:** `password`
 ---
 
-## Database Schema (ERD)
+## 5. Database Schema (ERD)
 
 Sesuai persyaratan menggunakan **Relational Database Management System (RDBMS)** (MySQL), berikut adalah skema relasi antar tabel (User, Resident, Unit, Bills, Complaints, Facility Bookings) yang digunakan dalam project ini.
 
@@ -171,11 +171,7 @@ Sesuai persyaratan menggunakan **Relational Database Management System (RDBMS)**
 
 
 
-
-
-
-
-## Project Structure
+## 6. Project Structure
 
 RealtyApartment/
 │── app/
@@ -197,7 +193,7 @@ RealtyApartment/
 └── vendor/
 
 
-
+# 6.1. STRUCTRE MODULE
 **Module**	    | **Description**
 Unit Management	|  Mengatur unit apartemen & status hunian
 Residents	Data  |  penghuni, kontrak, riwayat
@@ -208,7 +204,7 @@ Dashboard	      |  Statistik keuangan & occupancy
 
 
 
-## Cara Installnya 
+## 7. Cara MengInstall 
 
 1. Clone Repository
 git clone [https://github.com/Mangga123/Project_Akhir_PAW.git]
